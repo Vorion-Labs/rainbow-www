@@ -3,7 +3,6 @@
 
 import type { Metadata, Viewport } from 'next';
 import { connection } from 'next/server';
-import { Analytics } from '@vercel/analytics/next';
 import { Inter } from 'next/font/google';
 import { TRUST_FACTORS } from '@vorionsys/basis-spec';
 import './globals.css';
@@ -157,14 +156,12 @@ export default async function RootLayout({
         <div className="print:hidden">
           {!unavailable && <CommandPalette items={buildCommandItems(live)} />}
           {!unavailable && <MobileNav omit={live ? PUBLIC_ONLY_PREFIXES : []} />}
-          {/* Offline caching, install prompts and third-party analytics are
-              public-site features. On the live deployment they would leave real
-              telemetry in browser storage or send agent ids (which are in the
-              URLs) to a third party. */}
+          {/* Offline caching and install prompts are public-site features. On
+              the live deployment they would leave real telemetry in browser
+              storage. */}
           {!live && <InstallPrompt />}
         </div>
         {!live && <SwRegister />}
-        {!live && <Analytics />}
       </body>
     </html>
   );

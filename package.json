@@ -20,7 +20,6 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.112.4",
-    "@vercel/analytics": "^1.6.1",
     "@vorionsys/basis-spec": "^1.2.0",
     "@vorionsys/rainbow": "^0.3.0",
     "jose": "^6.2.12",

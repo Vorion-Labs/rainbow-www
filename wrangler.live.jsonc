@@ -22,6 +22,9 @@
   // Missing Access settings make every page answer 503, never serve openly.
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "rainbow-www-live",
+  // Pinned: a deploy under a different wrangler login fails here instead of
+  // acting on the wrong Cloudflare account.
+  "account_id": "5a28f7361031718644f9edcbf90550f3",
   "main": ".open-next/worker.js",
   "compatibility_date": "2025-04-01",
   "compatibility_flags": ["nodejs_compat"],
